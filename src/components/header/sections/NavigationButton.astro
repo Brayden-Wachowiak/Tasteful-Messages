@@ -1,0 +1,57 @@
+---
+export interface Props {
+    link: string;
+    label: string;
+    color: string;
+}
+const{
+    link="",
+    label="*No Label*",
+    color="#00000"
+} = Astro.props as Props;
+---
+
+<div class="header-navigation-button">
+    <span></span>
+    <a href={link}>{label}</a>
+</div>
+
+<style define:vars={{color: `#${color}`}}>
+    .header-navigation-button{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+    }
+
+    a{
+        color: #a6a6a6;
+        font-size: 22px;
+        text-decoration: none;
+        transition: .25s ease-out;
+    }
+
+    .header-navigation-button:hover{
+
+        a{
+            transition: .25s ease-in;
+            color: var(--color);
+            font-weight: 300;
+        }
+
+        span{
+            background-color: var(--color);
+            width: 60px;
+            transition: .15s ease-out;
+        }
+    }
+
+    span{
+        display: flex;
+        margin: 10px;
+        width: 30px;
+        height: 1px;
+        background-color: #a6a6a6;
+        transition: .15s ease-out;
+    }
+</style>

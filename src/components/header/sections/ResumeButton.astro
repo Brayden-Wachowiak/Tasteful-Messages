@@ -1,0 +1,52 @@
+---
+import image from "./imgs/file.svg";
+---
+
+<div class="header-resume-button">
+    <img src={image.src} height="15px"/>
+    <a href="">Resume</a>
+</div>
+
+<style>
+    .header-resume-button{
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 4fr;
+        cursor: pointer;
+        grid-area: "resume";
+        align-self: center;
+        justify-self: end;
+        padding: 8px;
+        background-color: red;
+        background-image: linear-gradient(90deg, #faec2b, #fab24c, #ff8e66, #fe5f7b);
+        background-size: 300% 100%;
+        transition: all .5s ease-in-out;
+    }
+
+    .header-resume-button:hover{
+        background-position: 100% 0;
+        transition: all .5s ease-in-out;
+        box-shadow: 0 0 7px 0 rgba(254, 95, 123, 0.75);
+    }
+
+    img{
+        grid-column: 1;
+        align-self: center;
+        justify-self: center;
+        padding: 1px;
+        border-radius: 3px;
+        border: 1.5px solid black;
+    }
+
+    a{
+        margin-left: 8px;
+        grid-column: 2;
+        align-self: center;
+        justify-self: center;
+        text-decoration: none;
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+        color: black;
+        font-weight: 500;
+    }
+</style>

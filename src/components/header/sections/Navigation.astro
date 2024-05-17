@@ -1,0 +1,41 @@
+---
+import NavigationButton from "./NavigationButton.astro";
+---
+
+<div class="header-navigation-container">
+    <NavigationButton
+        link=""
+        label="Home"
+        color="faec2b"
+    />
+    <NavigationButton
+        link=""
+        label="Projects"
+        color="fab24c"
+    />
+    <NavigationButton
+        link=""
+        label="About"
+        color="ff8e66"
+    />
+    <NavigationButton
+        link=""
+        label="Contact Me"
+        color="fe5f7b"
+    />
+</div>
+
+<style>
+    @media(min-width: 1100px) {
+        .header-navigation-container{
+            grid-area: "nav";
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            justify-self: end;
+            align-self: center;
+        }
+    }
+    @media(max-width: 1100px) {
+    }
+</style>
