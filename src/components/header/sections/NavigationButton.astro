@@ -2,56 +2,37 @@
 export interface Props {
     link: string;
     label: string;
-    color: string;
 }
 const{
     link="",
     label="*No Label*",
-    color="#00000"
 } = Astro.props as Props;
 ---
+<a href={link} target="_blank">
+    <button class="header-navigation-button">{label}</button>
+</a>
 
-<div class="header-navigation-button">
-    <span></span>
-    <a href={link}>{label}</a>
-</div>
-
-<style define:vars={{color: `#${color}`}}>
-    .header-navigation-button{
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: auto;
-    }
-
-    a{
-        color: #a6a6a6;
-        font-size: 22px;
-        text-decoration: none;
-        transition: .25s ease-out;
-    }
-
-    .header-navigation-button:hover{
-
-        a{
-            transition: .25s ease-in;
-            color: var(--color);
-            font-weight: 300;
+<style>
+        .header-navigation-button{
+            background-color: #e9ead8;
+            border: none;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            color: #333;
+            border-radius: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
-
-        span{
-            background-color: var(--color);
-            width: 60px;
-            transition: .15s ease-out;
+        .header-navigation-button:hover{
+            background-color: #b5c2b7; /* Change background color on hover */
+            color: #111; /* Slightly darker text on hover */
         }
-    }
-
-    span{
-        display: flex;
-        margin: 10px;
-        width: 30px;
-        height: 1px;
-        background-color: #a6a6a6;
-        transition: .15s ease-out;
-    }
+        a{  
+            margin: 0 10px;
+            width: max-content;
+            font-size: 22px;
+            text-decoration: none;
+            transition: .25s ease-out;
+        }
 </style>

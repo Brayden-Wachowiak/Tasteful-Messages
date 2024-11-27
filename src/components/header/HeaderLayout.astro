@@ -4,157 +4,39 @@ import ResumeButton from "./sections/ResumeButton.astro";
 ---
 
 <div class="header-container">
-    <h1>Brayden Wachowiak</h1>
-    <div class="mobile-menu-toggle">
-        <input id="menu-toggle" type="checkbox"/>
-        <label class="menu-button" for="menu-toggle">
-            <span id="menu-bar-top"></span>
-            <span id="menu-bar-middle"></span>
-            <span id="menu-bar-bottom"></span>
-        </label>
+    <div class="header-title-container">
+        <h1 class="header-title-top">Tasteful</h1>
+        <h1 class="header-title-bottom">Messages</h1>
     </div>
-    <div class="header-nav-container">
-        <Navigation />
-        <ResumeButton />
-    </div>
+    <Navigation />
 </div>
 
 <style>
-    h1{
-        justify-self: start;
-        align-self: center;
-    }
-
     .header-container{
-        grid-area: 1;
+        height: 10vh;
+        display: grid;
+        grid-template-columns: 30px 180px auto 500px 30px;
+        grid-template-rows: 1fr;
+        align-items: center;
+        background-color: #fef9e6;
     }
-
-
-    @media(min-width: 1100px) {
-        .header-container{
-            display: grid;
-            padding: 10px;
-            grid-template-columns: 2fr 3fr;
-            grid-template-rows: 1fr;
-            grid-area: 
-                "title" "nav";
-            background-color: #262626;
-            height: 42px;
-        }
-
-        .header-nav-container{
-            display: grid;
-            grid-template-columns: 1fr 150px;
-        }
-
-        .mobile-menu-toggle{
-            display: none;
-        }
+    
+    .header-title-container{
+        grid-column: 2 / span 1;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        background-color: #fef9e6;
     }
-
-    @media (max-width: 1100px){
-        .header-container{
-            position: fixed;
-            display: grid;
-            grid-template-columns: 1fr 90px;
-            grid-template-rows: 1fr;
-            background-color: #262626;
-            height: 90px;
-            width: 100%;
-        }
-
-        .header-nav-container{
-            position: absolute;
-            top: 90px;
-            left: 0;
-            width: 100%;
-            background-color: white;
-        }
-
-        .mobile-menu-toggle{
-            display: grid;
-            justify-self: start;
-            align-self: center;
-            width: 60px;
-            height: 60px;
-            background-image: linear-gradient(90deg, #a1e1e3, #8fe3bf, #17ffae, #00fff2);
-            transition: all .5s ease-in-out;
-            background-size: 300% 100%;
-            pointer-events: auto;
-        }
-
-        .mobile-menu-toggle:has(#menu-toggle:checked){
-            background-position: 100% 0;
-            transition: all .5s ease-in-out;
-            box-shadow: 0 0 7px 0 rgba(15, 255, 187, 0.75);
-        }
-
-        h1{
-            font-size: 2.5rem;
-            margin-left: 10px;
-        }
-
-        #menu-toggle {
-            opacity: 0;
-            display: none;
-            pointer-events: none;
-        }
-
-        #menu-toggle:checked + .menu-button > #menu-bar-top {
-            position: relative;
-            top: 9px;
-            transform: rotate(-45deg);
-        }
-
-        #menu-toggle:checked + .menu-button > #menu-bar-middle {
-            opacity: 0;
-            transform: rotate(0deg);
-        }
-
-        #menu-toggle:checked + .menu-button > #menu-bar-bottom {
-            position: relative;
-            top: -9px;
-            transform: rotate(45deg);
-        }
-
-        .menu-button {
-            grid-area: 1;
-            justify-self: center;
-            align-self: center;
-            display: grid;
-            grid-template-rows: 2px 1fr 2px 1fr 2px;
-            width: 30px;
-            height: 20px;
-            cursor: pointer;
-            z-index: 1;
-        }
-
-        .menu-button > #menu-bar-top,
-        .menu-button > #menu-bar-middle,
-        .menu-button > #menu-bar-bottom {
-            display: block;
-            width: 30px;
-            height: 2px;
-            background-color: black;
-            transition-duration: .25s;
-        }
-
-        .menu-button > #menu-bar-top {
-            grid-area: 1;
-            content: '';
-        }
-
-        .menu-button > #menu-bar-middle {
-            content: '';
-            grid-area: 3;
-            grid-row: 3;
-        }
-
-        .menu-button > #menu-bar-bottom {
-            content: '';
-            grid-area: 5;
-            grid-row: 5;
-        }
+    .header-title-top{
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 2px;
+        padding: 0 25px;
     }
-
+    .header-title-bottom{
+        font-family: "Indie Flower", cursive;
+        letter-spacing: 1px;
+        padding: 0 25px;
+    }
 </style>

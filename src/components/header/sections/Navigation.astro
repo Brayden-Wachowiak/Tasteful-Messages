@@ -1,47 +1,34 @@
 ---
 import NavigationButton from "./NavigationButton.astro";
+import ResumeButton from "./ResumeButton.astro";
 ---
 
 <div class="header-navigation-container">
     <NavigationButton
         link=""
-        label="Home"
-        color="faec2b"
+        label="Option 1"
     />
     <NavigationButton
         link=""
-        label="Projects"
-        color="fab24c"
+        label="Option 2"
     />
     <NavigationButton
         link=""
-        label="About"
-        color="ff8e66"
+        label="Option 3"
     />
-    <NavigationButton
+    <ResumeButton 
         link=""
-        label="Contact Me"
-        color="fe5f7b"
+        label="Login"
     />
 </div>
 
 <style>
-    @media(min-width: 1100px) {
-        .header-navigation-container{
-            grid-area: "nav";
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            justify-self: end;
-            align-self: center;
-        }
-    }
-
-    @media(max-height: 730px) {
-        .header-navigation-container{
-            gap: 4px;
-        }
-    }
-    @media(max-width: 1100px) {
+    .header-navigation-container{
+        height: 100%;
+        grid-column: 4 / span 1;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: #fef9e6;
     }
 </style>

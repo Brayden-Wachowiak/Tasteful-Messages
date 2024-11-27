@@ -1,14 +1,17 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeaderLayout from '../components/newheader/HeaderLayout.astro';
+import HeaderLayout from '../components/header/HeaderLayout.astro';
 import HomeLayout from './home/HomeLayout.astro'
 ---
 
-<Layout title="Brayden Wachowiak Portfolio">
-	<HeaderLayout/>
-	<HomeLayout />
+<Layout title="Tasteful Messages">
+	<div class="body-container">
+		<HeaderLayout />
+	</div>
 </Layout>
 
 <style>
-
+	.body-container{
+		grid-column: 2 / span 1;
+	}
 </style>
