@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: string;
+  price: number;
+  image: string;
+  color: string;
+  isNew?: boolean;
+}
+
+const { name, price, image, color, isNew = false, } = Astro.props as Props;
+
+import AddToCartButton from "./subparts/AddToCartButton.astro"
+import lemon from "./lemon.jpg"
+---
+
+<div class="card-container">
+    <img src={""} alt="lemon" class="card-image">
+    <div class="card-bottom">
+        <h3 class="card-name">{name}</h2>
+        <h3 class="card-price">{`$${price}.00`}</h2>
+        <AddToCartButton />
+    </div>
+</div>
+
+<style define:vars={{color: `${color}`}}>
+    .card-container{
+        display: grid;
+        grid-template-rows:1fr 60px;
+        height: 250px;
+        width: 250px;
+        padding: 25px;
+        border-radius: 15px;
+        background-color: var(--color);
+    }
+
+    .card-image{
+        grid-column: 1 / span 1;
+        border-radius: 15px;
+    }
+
+    .card-bottom{
+        display: grid;
+        background-color: #fef9e6;
+        border-radius: 15px;
+        grid-template-columns: 1fr 60px;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    .card-name{
+        margin-left: 16px;
+        align-self: center;
+        grid-row: 1 / span 1;
+        grid-column: 1 / span 1;
+    }
+
+    .card-price{
+        margin-left: 16px;
+        align-self: center;
+        grid-row: 2 / span 1;
+        grid-column: 1 / span 1;
+    }
+</style>

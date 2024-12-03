@@ -1,17 +1,20 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import HeaderLayout from '../components/header/HeaderLayout.astro';
-import HomeLayout from './home/HomeLayout.astro'
+import HeaderLayout from './home/header/HeaderLayout.astro';
+import BodyLayout from './home/body/BodyLayout.astro';
 ---
 
 <Layout title="Tasteful Messages">
-	<div class="body-container">
+	<div class="site-container">
 		<HeaderLayout />
+		<BodyLayout />
 	</div>
 </Layout>
 
 <style>
-	.body-container{
+	.site-container{
 		grid-column: 2 / span 1;
+		display: grid;
+        grid-template-rows: 10vh 50px 1fr;
 	}
 </style>

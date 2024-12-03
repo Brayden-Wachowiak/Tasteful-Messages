@@ -1,0 +1,28 @@
+---
+import { Icon } from '../../index'
+---
+
+<button class="add-to-cart-button">
+    <Icon name="cart_plus" size="20px" color="#333"/>
+</button>
+
+<style>
+        .add-to-cart-button{ 
+            padding: 10px;
+            align-self: center;
+            justify-self: center;
+            grid-row: 1 / span 2;
+            grid-column: 2 / span 1;
+            background-color: #ff869d;
+            color: #333;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .add-to-cart-button:hover{
+            background-color: #d35c72;
+            color: #111;
+        }
+</style>

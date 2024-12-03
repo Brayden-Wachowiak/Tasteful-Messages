@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  size?: string;
+  color?: string;
+  margin?: string;
+}
+
+import icons from './index';
+
+const { name, size = '16px', color = 'currentColor', margin = "0px" } = Astro.props;
+
+const iconSvg = name ? icons[name] : null;
+
+let styledSvg = iconSvg;
+if (iconSvg) {
+  styledSvg = iconSvg
+    .replace(/<svg /, `<svg style="width: ${size}; height: ${size}; fill: ${color};" `);
+}
+
+---
+<div class={'icon-wrapper'} set:html={styledSvg}>
+
+<style define:vars={{size: `${size}`, margin: `${margin}`}}>
+    .icon-wrapper{
+      margin-right: var(--margin);
+      width: var(--size);
+      height: var(--size);
+    }
+</style>

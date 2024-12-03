@@ -1,6 +1,5 @@
 ---
-import Navigation from "./sections/Navigation.astro";
-import ResumeButton from "./sections/ResumeButton.astro";
+import Navigation from "./subparts/Navigation.astro";
 ---
 
 <div class="header-container">
@@ -15,10 +14,12 @@ import ResumeButton from "./sections/ResumeButton.astro";
     .header-container{
         height: 10vh;
         display: grid;
-        grid-template-columns: 30px 180px auto 500px 30px;
+        grid-template-columns: 30px 240px auto 650px 30px;
         grid-template-rows: 1fr;
         align-items: center;
         background-color: #fef9e6;
+        border-radius: 0px 0px 15px 15px;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
     }
     
     .header-title-container{
@@ -30,12 +31,12 @@ import ResumeButton from "./sections/ResumeButton.astro";
         background-color: #fef9e6;
     }
     .header-title-top{
-        font-family: "Indie Flower", cursive;
+        font-family: "Chango", sans-serif;
         letter-spacing: 2px;
         padding: 0 25px;
     }
     .header-title-bottom{
-        font-family: "Indie Flower", cursive;
+        font-family: "Chango", sans-serif;
         letter-spacing: 1px;
         padding: 0 25px;
     }

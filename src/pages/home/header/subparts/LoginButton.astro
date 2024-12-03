@@ -7,26 +7,38 @@ const{
     link="",
     label="*No Label*",
 } = Astro.props as Props;
+
+import { Icon } from '../../../../components/index';
 ---
+
 <a href={link} target="_blank">
-    <button class="header-navigation-button">{label}</button>
+    <button class="header-navigation-button">
+        <Icon name="profile" size="16px" color="#333" margin='8px'/>
+        {label}
+    </button>
 </a>
 
 <style>
-        .header-navigation-button{  
+        #text{
+            margin-left: 8px;
+        }
+        .header-navigation-button{
+            font-family: "Chango", sans-serif;
+            display: flex;  
             font-weight: 600;
             background-color: #ff869d;
             color: #333;
             border: none;
             border-radius: 100px;
             box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-            padding: 10px 20px;
+            padding: 12px 24px;
             font-size: 16px;
+            line-height: 16px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         .header-navigation-button:hover{
-            background-color: #f7a3b3;
+            background-color: #d35c72;
             color: #111;
         }
         a{

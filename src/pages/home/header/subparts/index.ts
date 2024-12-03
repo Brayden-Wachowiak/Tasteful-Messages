@@ -1,8 +1,8 @@
 import Navigation from "./Navigation.astro";
 export { Navigation };
 
-import ResumeButton from "./ResumeButton.astro";
-export { ResumeButton };
+import LoginButton from "./LoginButton.astro";
+export { LoginButton };
 
 import NavigationButton from "./NavigationButton.astro";
 export { NavigationButton };
